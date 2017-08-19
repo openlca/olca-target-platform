@@ -1,0 +1,30 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.openlca.releng</groupId>
+	<artifactId>olca-target-runtime</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>eclipse-target-definition</packaging>
+	
+	<properties>
+		<tycho-version>1.0.0</tycho-version>
+	</properties>
+	
+	<build>
+		<defaultGoal>deploy</defaultGoal>
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-maven-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<extensions>true</extensions>
+			</plugin>
+		</plugins>
+	</build>
+	<distributionManagement>
+		<snapshotRepository>
+			<id>olca-repo</id>
+			<name>OpenLCA Nexus at OpenShift</name>
+			<url>https://nexus-olca.a3c1.starter-us-west-1.openshiftapps.com/nexus/content/repositories/snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
+</project>
